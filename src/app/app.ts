@@ -1,12 +1,12 @@
-import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component } from '@angular/core';
+import { SolicitacaoListaComponent } from './components/solicitacoes/solicitacao-lista/solicitacao-lista';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [SolicitacaoListaComponent],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
-export class App {
-  protected readonly title = signal('painel-credito');
+export class AppComponent {
+  title = 'Painel de Solicitações de Crédito';
 }
