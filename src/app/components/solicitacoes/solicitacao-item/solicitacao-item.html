@@ -1,8 +1,9 @@
 <div class="card">
   <div class="card__header">
     <h3 class="card__cliente">{{ solicitacao.cliente }}</h3>
-    <span class="card__status" [class]="statusClass">
-      {{ statusLabel }}
+
+    <span class="card__status" [ngClass]="solicitacao.statusClass">
+      {{ solicitacao.statusLabel }}
     </span>
   </div>
 

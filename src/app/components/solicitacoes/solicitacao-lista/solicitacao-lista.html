@@ -1,16 +1,11 @@
-@if (isLoading) {
-  <div class="loading">
-    <div class="loading__spinner"></div>
-    <p class="loading__text">Carregando solicitações...</p>
-  </div>
+@if (service.loading()) {
+  <p>Carregando...</p>
 } @else {
-  @if (solicitacoes.length === 0) {
-    <div class="empty">
-      <p class="empty__text">Nenhuma solicitação encontrada.</p>
-    </div>
+  @if (service.solicitacoes().length === 0) {
+    <p>Nenhuma solicitação encontrada.</p>
   } @else {
     <div class="lista">
-      @for (solicitacao of solicitacoes; track solicitacao.id) {
+      @for (solicitacao of service.solicitacoes(); track $index) {
         <app-solicitacao-item [solicitacao]="solicitacao" />
       }
     </div>
