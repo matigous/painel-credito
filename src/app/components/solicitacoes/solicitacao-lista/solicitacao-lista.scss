@@ -9,6 +9,7 @@
     padding: 0 1.5rem;
   }
 }
+
 .lista {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
@@ -48,6 +49,13 @@
   }
 }
 
+.viewport {
+  height: 600px;
+  width: 100%;
+}
+
 @keyframes spin {
-  to { transform: rotate(360deg); }
+  to {
+    transform: rotate(360deg);
+  }
 }

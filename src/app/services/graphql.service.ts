@@ -12,7 +12,7 @@ export interface SolicitacaoViewModel extends Solicitacao {
 })
 export class SolicitacoesService {
 
-  constructor(private apollo: Apollo) {}
+  constructor(private apollo: Apollo) { }
 
   solicitacoes = signal<SolicitacaoViewModel[]>([]);
   loading = signal(false);
@@ -28,19 +28,17 @@ export class SolicitacoesService {
           solicitacoes {
             id
             cliente
-            documento
             valor
             status
-            dataSolicitacao
           }
         }
       `,
-      fetchPolicy: 'no-cache'
+      fetchPolicy: 'cache-first'
     }).subscribe({
       next: (result) => {
         const data = result.data?.solicitacoes || [];
         const viewModel = data.map(s => this.mapToViewModel(s));
-        this.solicitacoes.set([...viewModel]);
+        this.solicitacoes.set(viewModel);
         this.loading.set(false);
       },
       error: () => {
