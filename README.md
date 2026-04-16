@@ -1,59 +1,62 @@
-# PainelCredito
+# Painel de Crédito
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.16.
+![Status](https://img.shields.io/badge/status-active-brightgreen)
+![Angular](https://img.shields.io/badge/angular-20.3-red)
+![License](https://img.shields.io/badge/license-MIT-blue)
 
-## Development server
+Aplicação web educacional desenvolvida durante a **Imersão FIAP/CAIXAVERSO**. O projeto demonstra conceitos modernos de Angular (v20+) com foco em componentes standalone, Signals e integração com GraphQL.
 
-To start a local development server, run:
+## ✨ Funcionalidades
 
-```bash
-ng serve
-```
+- **Gestão de Crédito:** Listagem e acompanhamento de solicitações com diferentes status.
+- **Segurança:** Sistema de autenticação com Guards e Interceptors para injeção de tokens.
+- **Interface:** Painel responsivo construído com componentes reutilizáveis e SCSS.
+- **Consumo de Dados:** Integração robusta com API via Apollo Client (GraphQL).
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## 🛠 Tecnologias
 
-## Code scaffolding
+- **Core:** Angular 20, TypeScript 5.9, RxJS 7.8, Signals.
+- **API:** GraphQL & Apollo Client.
+- **Estilo:** SCSS & Flexbox/Grid.
+- **Testes:** Karma & Jest.
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
+## 📁 Estrutura do Projeto
 
 ```bash
-ng build
+src/app/
+├── components/     # Componentes (Login, Lista de Solicitações, Header)
+├── services/       # Lógica de negócio (Auth, GraphQL)
+├── guards/         # Proteção de rotas
+├── interceptors/   # Manipulação de requisições HTTP
+├── models/         # Interfaces e Tipos
+└── app.routes.ts   # Configuração de rotas (Lazy Loading)
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+## 🚀 Como Executar
 
-## Running unit tests
+1. **Instale as dependências:**
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+   ```bash
+   npm install
+   ```
 
-```bash
-ng test
-```
+2. **Inicie o servidor de desenvolvimento:**
 
-## Running end-to-end tests
+   ```bash
+   npm start
+   ```
 
-For end-to-end (e2e) testing, run:
+   Acesse `http://localhost:4200/`.
 
-```bash
-ng e2e
-```
+3. **Testes e Build:**
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+   ```bash
+   npm test          # Executa testes unitários
+   npm run build     # Gera versão de produção em /dist
+   ```
 
-## Additional Resources
+## 👤 Autoria
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+- **Desenvolvedor:** Matheus Vilela
+- **Instituição:** FIAP (Imersão FIAP/CAIXAVERSO)
+- **Licença:** MIT
