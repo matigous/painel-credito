@@ -1,0 +1,57 @@
+{
+  "$schema": "./node_modules/@angular/service-worker/config/schema.json",
+  "index": "/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "resources": {
+        "files": [
+          "/favicon.ico",
+          "/index.html",
+          "/*.css",
+          "/*.js"
+        ]
+      }
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "lazy",
+      "resources": {
+        "files": [
+          "/assets/**",
+          "/**/.*"
+        ]
+      }
+    }
+  ],
+  "dataGroups": [
+    {
+      "name": "api-solicitacoes",
+      "urls": [
+        "/api/solicitacoes",
+        "http://localhost:4000/graphql"
+      ],
+      "cacheConfig": {
+        "strategy": "performance",
+        "maxAge": "24h",
+        "maxSize": 100
+      }
+    },
+    {
+      "name": "api-auth",
+      "urls": [
+        "/api/auth",
+        "http://localhost:4000/graphql"
+      ],
+      "cacheConfig": {
+        "strategy": "network-first",
+        "timeout": "5s",
+        "maxAge": "1h",
+        "maxSize": 10
+      }
+    }
+  ]
+}

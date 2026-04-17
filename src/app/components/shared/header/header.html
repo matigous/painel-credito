@@ -1,3 +1,12 @@
+<div *ngIf="(isOnline$ | async) === false" class="offline-banner">
+  <div class="offline-banner__content">
+    <span class="offline-banner__icon">📡</span>
+    <span class="offline-banner__text">
+      Você está offline. Os dados são carregados do cache.
+    </span>
+  </div>
+</div>
+
 <header class="header">
   <div class="header__container">
     <h1 class="header__title">{{ title }}</h1>
