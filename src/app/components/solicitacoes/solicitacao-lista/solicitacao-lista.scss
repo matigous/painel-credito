@@ -1,19 +1,40 @@
-.main {
+.page-container {
   background-color: #f8fafc;
-  min-height: calc(100vh - 100px);
-  padding: 2rem 0;
+  min-height: calc(100dvh - 100px);
+  display: flex;
+  flex-direction: column;
+}
 
-  &__container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 1.5rem;
-  }
+.top-bar {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  background: white;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.acoes {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+  background-color: #f8f9fa;
+  flex-wrap: wrap;
 }
 
 .lista {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
   gap: 1.25rem;
+}
+
+.viewport {
+  height: 600px;
+  width: 100%;
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px;
+  max-width: 100%;
 }
 
 .loading {
@@ -46,6 +67,12 @@
   &__text {
     color: #9ca3af;
     font-size: 1rem;
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
   }
 }
 

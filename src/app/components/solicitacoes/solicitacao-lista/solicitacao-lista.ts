@@ -1,25 +1,65 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, signal, computed } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ScrollingModule } from '@angular/cdk/scrolling';
 import { SolicitacaoItemComponent } from '../solicitacao-item/solicitacao-item';
 import { SolicitacoesService, SolicitacaoViewModel } from '../../../services/graphql.service';
-import { HeaderComponent } from "../../shared/header/header";
+import { HeaderComponent } from '../../shared/header/header';
+import { FiltroSolicitacoesComponent } from '../filtro-solicitacoes/filtro-solicitacoes';
+import { BuscaSolicitacoesComponent } from '../busca-solicitacoes/busca-solicitacoes';
+import { ResumoSolicitacoesComponent } from '../resumo-solicitacoes/resumo-solicitacoes';
 
 @Component({
   selector: 'app-solicitacao-lista',
   standalone: true,
-  imports: [CommonModule, SolicitacaoItemComponent, HeaderComponent, ScrollingModule],
+  imports: [
+    CommonModule,
+    ScrollingModule,
+    SolicitacaoItemComponent,
+    HeaderComponent,
+    FiltroSolicitacoesComponent,
+    BuscaSolicitacoesComponent,
+    ResumoSolicitacoesComponent,
+  ],
   templateUrl: './solicitacao-lista.html',
   styleUrls: ['./solicitacao-lista.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SolicitacaoListaComponent implements OnInit {
+  constructor(public service: SolicitacoesService) {}
 
-  constructor(public service: SolicitacoesService) { }
+  filtroSelecionado = signal<string>('');
+  termoBusca = signal<string>('');
 
   ngOnInit() {
-    this.service.carregarSolicitacoes();
+    if (this.service.solicitacoes().length === 0) {
+      this.service.carregarSolicitacoes();
+    }
   }
+
+  aplicarFiltro(status: string) {
+    this.filtroSelecionado.set(status);
+  }
+
+  aplicarBusca(termo: string) {
+    this.termoBusca.set(termo.toLowerCase());
+  }
+
+  listaFiltrada = computed(() => {
+    let lista = this.service.solicitacoes();
+
+    const filtro = this.filtroSelecionado();
+    const busca = this.termoBusca();
+
+    if (filtro) {
+      lista = lista.filter((item) => item.status === filtro);
+    }
+
+    if (busca) {
+      lista = lista.filter((item) => item.cliente.toLowerCase().includes(busca));
+    }
+
+    return lista;
+  });
 
   trackById(index: number, item: SolicitacaoViewModel) {
     return item.id;
