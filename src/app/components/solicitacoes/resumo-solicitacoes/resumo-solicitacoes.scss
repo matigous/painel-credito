@@ -1,0 +1,59 @@
+.resumo-container {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #e9ecef;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.resumo-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  background: white;
+  border-radius: 8px;
+  border: 1px solid #e9ecef;
+  min-width: 120px;
+
+  .label {
+    color: #6c757d;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .value {
+    color: #1a1a1b;
+    font-size: 24px;
+    font-weight: 700;
+  }
+
+  &--aprovado {
+    border-left: 4px solid #d1fae5;
+
+    .value {
+      color: #065f46;
+    }
+  }
+
+  &--pendente {
+    border-left: 4px solid #fef3c7;
+
+    .value {
+      color: #92400e;
+    }
+  }
+
+  &--recusado {
+    border-left: 4px solid #fee2e2;
+
+    .value {
+      color: #991b1b;
+    }
+  }
+}
