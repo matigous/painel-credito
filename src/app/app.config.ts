@@ -11,6 +11,7 @@ import { InMemoryCache } from '@apollo/client/core';
 import { registerLocaleData } from '@angular/common';
 import localePt from '@angular/common/locales/pt';
 import { authInterceptor } from './interceptors/auth.interceptor';
+import { STORAGE_KEY } from './services/storage.token';
 
 registerLocaleData(localePt);
 
@@ -18,18 +19,21 @@ export const appConfig: ApplicationConfig = {
   providers: [
     provideRouter(routes),
 
-    provideHttpClient(
-      withInterceptors([authInterceptor])
-    ),
+    provideHttpClient(withInterceptors([authInterceptor])),
 
     {
       provide: LOCALE_ID,
-      useValue: 'pt-BR'
+      useValue: 'pt-BR',
+    },
+
+    {
+      provide: STORAGE_KEY,
+      useValue: localStorage,
     },
 
     provideServiceWorker('ngsw-worker.js', {
       enabled: !isDevMode(),
-      registrationStrategy: 'registerWhenStable:30000'
+      registrationStrategy: 'registerWhenStable:30000',
     }),
 
     provideApollo(() => {
@@ -37,10 +41,10 @@ export const appConfig: ApplicationConfig = {
 
       return {
         link: httpLink.create({
-          uri: 'http://localhost:4000/graphql'
+          uri: 'http://localhost:4000/graphql',
         }),
-        cache: new InMemoryCache()
+        cache: new InMemoryCache(),
       };
-    })
-  ]
+    }),
+  ],
 };
