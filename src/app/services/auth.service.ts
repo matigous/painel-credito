@@ -1,10 +1,9 @@
 import { Injectable, signal } from '@angular/core';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AuthService {
-
   private tokenKey = 'auth_token';
 
   isAuthenticated = signal(false);
@@ -52,10 +51,9 @@ export class AuthService {
       sub: 'user123',
       name: 'Usuário Teste',
       role: 'admin',
-      exp: Math.floor(Date.now() / 1000) + 60 * 60 // 1h
+      exp: Math.floor(Date.now() / 1000) + 60 * 60, // 1h
     };
 
     return btoa(JSON.stringify(payload));
   }
 }
- 
