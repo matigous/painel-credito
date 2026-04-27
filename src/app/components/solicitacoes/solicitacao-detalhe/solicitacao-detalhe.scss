@@ -3,9 +3,9 @@
   margin: 40px auto;
   padding: 32px;
   background: #ffffff;
-  border-radius: 16px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  font-family: 'Inter', sans-serif;
+  border-radius: 16px; // Arredondado igual aos cards da imagem
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); // Sombra suave
+  font-family: 'Inter', sans-serif; // Ou a fonte que você está usando no projeto
 }
 
 .btn-back {
@@ -93,7 +93,7 @@
   }
 
   .btn-aprovar {
-    background-color: #d1fae5;
+    background-color: #d1fae5; // Verde claro igual ao badge
     color: #065f46;
 
     &:hover {
@@ -102,7 +102,7 @@
   }
 
   .btn-reprovar {
-    background-color: #fee2e2;
+    background-color: #fee2e2; // Vermelho claro
     color: #991b1b;
 
     &:hover {
@@ -111,7 +111,7 @@
   }
 }
 
-/* Badges de Status */
+/* Badges de Status (mesmas cores da imagem) */
 .status-badge {
   padding: 6px 16px;
   border-radius: 12px;
@@ -124,17 +124,10 @@
   background: #fef3c7;
   color: #92400e;
 }
-
-.card__status--analise {
-  background: #bfdbfe;
-  color: #1e40af;
-}
-
 .card__status--aprovado {
   background: #d1fae5;
   color: #065f46;
 }
-
 .card__status--recusado {
   background: #fee2e2;
   color: #991b1b;
