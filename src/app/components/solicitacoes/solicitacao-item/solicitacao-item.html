@@ -1,8 +1,8 @@
-<div class="card" (click)="irParaDetalhe()">
+<div class="card">
   <div class="card__header">
     <h3 class="card__cliente">{{ solicitacao.cliente }}</h3>
 
-    <span class="card__status" [ngClass]="solicitacao.statusClass">
+    <span (click)="irParaDetalhe()" class="card__status" [ngClass]="solicitacao.statusClass">
       {{ solicitacao.statusLabel }}
     </span>
   </div>
@@ -26,5 +26,12 @@
         {{ solicitacao.dataSolicitacao | date: 'dd/MM/yyyy' }}
       </span>
     </div>
+  </div>
+
+  <!-- AÇÕES FORA DO BODY -->
+  <div class="card__acoes">
+    <button (click)="editar(); $event.stopPropagation()">Editar</button>
+    <button (click)="irParaDetalhe(); $event.stopPropagation()">Analisar</button>
+    <button (click)="deletar(); $event.stopPropagation()">Excluir</button>
   </div>
 </div>
