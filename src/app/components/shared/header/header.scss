@@ -23,6 +23,8 @@
   top: 0;
   left: 0;
   width: 100dvw !important;
+  min-width: 100dvw !important;
+  overflow-x: visible;
   background-color: #ff9800;
   color: white;
   padding: 6px 16px;
@@ -53,6 +55,8 @@
     top: 0;
     left: 0;
     width: 100dvw !important;
+    min-width: 100dvw !important;
+    overflow-x: visible;
     background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
     color: #ffffff;
     padding: 1.5rem 16px;
