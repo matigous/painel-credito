@@ -1,6 +1,9 @@
-import { Injectable, signal } from '@angular/core';
+import { Injectable, signal, Inject } from '@angular/core';
 import { Apollo, gql } from 'apollo-angular';
+import { map, shareReplay } from 'rxjs/operators';
+
 import { Solicitacao, StatusSolicitacao } from '../models/solicitacao.model';
+import { STORAGE_KEY } from './storage.token';
 
 export interface SolicitacaoViewModel extends Solicitacao {
   statusClass: string;
@@ -11,17 +14,18 @@ export interface SolicitacaoViewModel extends Solicitacao {
   providedIn: 'root',
 })
 export class SolicitacoesService {
-  constructor(private apollo: Apollo) {}
+  constructor(
+    private apollo: Apollo,
+    @Inject(STORAGE_KEY) private storageKey: string,
+  ) {}
 
   solicitacoes = signal<SolicitacaoViewModel[]>([]);
   loading = signal(false);
   error = signal<string | null>(null);
 
-  carregarSolicitacoes() {
-    this.loading.set(true);
-    this.error.set(null);
-
-    this.apollo
+  // MÉTODO COM CACHE (shareReplay)
+  getSolicitacoes$() {
+    return this.apollo
       .query<{ solicitacoes: Solicitacao[] }>({
         query: gql`
           query {
@@ -37,20 +41,64 @@ export class SolicitacoesService {
         `,
         fetchPolicy: 'cache-first',
       })
-      .subscribe({
-        next: (result) => {
-          const data = result.data?.solicitacoes || [];
-          const viewModel = data.map((s) => this.mapToViewModel(s));
-          this.solicitacoes.set(viewModel);
-          this.loading.set(false);
-        },
-        error: () => {
-          this.error.set('Erro ao buscar API GraphQL');
-          this.loading.set(false);
-        },
-      });
+      .pipe(
+        map((result) => result.data?.solicitacoes || []),
+        shareReplay(1),
+      );
   }
 
+  // LOCAL STORAGE
+  getDadosPersistidos(): SolicitacaoViewModel[] {
+    const dados = localStorage.getItem(this.storageKey);
+
+    if (dados) {
+      const lista = JSON.parse(dados);
+
+      return lista.map((item: any) =>
+        this.mapToViewModel({
+          ...item,
+          status: item.status as StatusSolicitacao,
+        }),
+      );
+    }
+
+    return [];
+  }
+
+  salvar(lista: SolicitacaoViewModel[]) {
+    localStorage.setItem(this.storageKey, JSON.stringify(lista));
+  }
+
+  // CARREGAMENTO DE DADOS
+  carregarSolicitacoes() {
+    this.loading.set(true);
+    this.error.set(null);
+
+    const local = this.getDadosPersistidos();
+
+    if (local.length > 0) {
+      this.solicitacoes.set(local);
+      this.loading.set(false);
+      return;
+    }
+
+    this.getSolicitacoes$().subscribe({
+      next: (data) => {
+        const viewModel = data.map((s) => this.mapToViewModel(s));
+
+        this.solicitacoes.set(viewModel);
+        this.salvar(viewModel);
+
+        this.loading.set(false);
+      },
+      error: () => {
+        this.error.set('Erro ao buscar API GraphQL');
+        this.loading.set(false);
+      },
+    });
+  }
+
+  // VIEW MODEL
   private mapToViewModel(s: Solicitacao): SolicitacaoViewModel {
     const status = s.status?.toLowerCase() ?? '';
 
@@ -70,18 +118,23 @@ export class SolicitacoesService {
 
     return {
       ...s,
+      status: status as StatusSolicitacao,
       statusClass: classMap[status] ?? '',
       statusLabel: labelMap[status] ?? s.status,
     };
   }
 
+  // ATUALIZAÇÃO DE STATUS
   atualizarStatus(id: number | string, novoStatus: StatusSolicitacao) {
-    this.solicitacoes.update((lista) =>
-      lista.map((item) =>
+    this.solicitacoes.update((lista) => {
+      const novaLista = lista.map((item) =>
         String(item.id) === String(id)
           ? this.mapToViewModel({ ...item, status: novoStatus })
           : item,
-      ),
-    );
+      );
+
+      this.salvar(novaLista);
+      return novaLista;
+    });
   }
 }
