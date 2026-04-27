@@ -1,15 +1,13 @@
-import { Component, computed, input } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, computed, input } from '@angular/core'; // Importe o 'input'
 import { SolicitacaoViewModel } from '../../../services/graphql.service';
 
 @Component({
   selector: 'app-resumo-solicitacoes',
   standalone: true,
-  imports: [CommonModule],
   templateUrl: './resumo-solicitacoes.html',
-  styleUrl: './resumo-solicitacoes.scss',
 })
 export class ResumoSolicitacoesComponent {
+  // Transforma em Signal Input
   lista = input<SolicitacaoViewModel[]>([]);
 
   resumo = computed(() => {
