@@ -1,6 +1,7 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
+import { TranslatePipe } from '@ngx-translate/core';
 
 import { SolicitacaoViewModel } from '../../../services/graphql.service';
 import { SolicitacoesFacade } from '../../../services/solicitacoes.facade';
@@ -8,7 +9,7 @@ import { SolicitacoesFacade } from '../../../services/solicitacoes.facade';
 @Component({
   selector: 'app-solicitacao-item',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, TranslatePipe],
   templateUrl: './solicitacao-item.html',
   styleUrls: ['./solicitacao-item.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,

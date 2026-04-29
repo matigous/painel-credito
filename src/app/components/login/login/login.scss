@@ -49,6 +49,17 @@
   font-weight: 600;
 }
 
+.login__description {
+  font-size: 14px;
+  color: #4b5563;
+}
+
+.login__label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #1f2937;
+}
+
 /* FORM */
 .login__form {
   display: flex;
@@ -90,6 +101,19 @@
 .login__button:hover {
   background: #1565c0;
   transform: translateY(-1px);
+}
+
+.login__button--google {
+  background: #0f766e;
+}
+
+.login__button--google:hover {
+  background: #0d9488;
+}
+
+.login__error {
+  font-size: 13px;
+  color: #b91c1c;
 }
 
 .login__footer {

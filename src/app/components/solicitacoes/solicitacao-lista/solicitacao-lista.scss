@@ -3,7 +3,8 @@
   padding: 24px;
   max-width: 1200px;
   margin: 0 auto;
-  background-color: #f8fafc;
+  background-color: var(--page-bg);
+  color: var(--text-main);
   min-height: 100vh;
 }
 
@@ -13,7 +14,7 @@ app-resumo-solicitacoes {
   gap: 16px;
   margin-bottom: 12px;
   font-size: 0.95rem;
-  color: #374151;
+  color: var(--text-muted);
 }
 
 /* TOP BAR */
@@ -58,12 +59,18 @@ app-resumo-solicitacoes {
 /* INPUT BUSCA */
 app-busca-solicitacoes input {
   padding: 10px 14px;
-  border: 1px solid #e5e7eb;
+  border: 1px solid var(--border);
   border-radius: 8px;
   font-size: 14px;
   min-width: 220px;
   outline: none;
   transition: 0.2s;
+  background: var(--input-bg);
+  color: var(--text-main);
+}
+
+app-busca-solicitacoes input::placeholder {
+  color: var(--text-muted);
 }
 
 app-busca-solicitacoes input:focus {
@@ -74,16 +81,18 @@ app-busca-solicitacoes input:focus {
 /* SELECT FILTRO */
 app-filtro-solicitacoes select {
   padding: 10px 12px;
-  border: 1px solid #e5e7eb;
+  border: 1px solid var(--border);
   border-radius: 8px;
   font-size: 14px;
-  background: #fff;
+  background: var(--input-bg);
+  color: var(--text-main);
   cursor: pointer;
 }
 
 app-filtro-solicitacoes select:focus {
   border-color: #6366f1;
   outline: none;
+  box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.15);
 }
 
 /* GRID DA LISTA */

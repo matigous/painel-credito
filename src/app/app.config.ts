@@ -13,6 +13,13 @@ import localePt from '@angular/common/locales/pt';
 import { authInterceptor } from './interceptors/auth.interceptor';
 import { STORAGE_KEY } from './services/storage.token';
 
+import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
+import { provideAuth, getAuth } from '@angular/fire/auth';
+import { environment } from '../environments/environment';
+
+import { provideTranslateService } from '@ngx-translate/core';
+import { provideTranslateHttpLoader } from '@ngx-translate/http-loader';
+
 registerLocaleData(localePt);
 
 export const appConfig: ApplicationConfig = {
@@ -28,12 +35,20 @@ export const appConfig: ApplicationConfig = {
 
     {
       provide: STORAGE_KEY,
-      useValue: localStorage,
+      useValue: 'solicitacoes',
     },
 
-    provideServiceWorker('ngsw-worker.js', {
-      enabled: !isDevMode(),
-      registrationStrategy: 'registerWhenStable:30000',
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+
+    provideAuth(() => getAuth()),
+
+    provideTranslateService({
+      fallbackLang: 'pt-BR',
+      lang: 'pt-BR',
+      loader: provideTranslateHttpLoader({
+        prefix: '/assets/i18n/',
+        suffix: '.json',
+      }),
     }),
 
     provideApollo(() => {
@@ -45,6 +60,11 @@ export const appConfig: ApplicationConfig = {
         }),
         cache: new InMemoryCache(),
       };
+    }),
+
+    provideServiceWorker('ngsw-worker.js', {
+      enabled: !isDevMode(),
+      registrationStrategy: 'registerWhenStable:30000',
     }),
   ],
 };
