@@ -22,13 +22,6 @@
   border-radius: 18px;
   padding: 1.5rem;
   box-shadow: var(--shadow);
-  transition:
-    transform 0.2s ease,
-    box-shadow 0.2s ease;
-}
-
-.atividades-hero:hover {
-  box-shadow: var(--shadow-hover);
 }
 
 .eyebrow {
@@ -60,12 +53,10 @@
   border-radius: 10px;
   padding: 0.75rem 1rem;
   font-weight: 700;
-  transition: all 0.2s ease;
 }
 
 .btn-voltar:hover {
   background: var(--primary-hover);
-  transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
 }
 
@@ -110,14 +101,6 @@
   border-radius: 16px;
   padding: 1rem;
   box-shadow: var(--shadow);
-  transition:
-    transform 0.2s ease,
-    box-shadow 0.2s ease;
-}
-
-.atividade-card:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-hover);
 }
 
 .atividade-card__icone {

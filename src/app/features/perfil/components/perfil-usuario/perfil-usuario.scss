@@ -20,16 +20,6 @@
   border-radius: 16px;
   padding: 1.5rem;
   box-shadow: var(--shadow);
-  transition:
-    transform 0.2s ease,
-    box-shadow 0.2s ease;
-}
-
-.perfil-card:hover,
-.preferencias-card:hover,
-.seguranca-card:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-hover);
 }
 
 .perfil-card__header {

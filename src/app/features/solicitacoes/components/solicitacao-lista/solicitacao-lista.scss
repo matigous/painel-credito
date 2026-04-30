@@ -61,7 +61,6 @@ app-resumo-solicitacoes {
   font-size: 14px;
   font-weight: 600;
   cursor: pointer;
-  transition: 0.2s;
 }
 
 .btn-novo:hover {
@@ -76,7 +75,6 @@ app-resumo-solicitacoes {
   font-size: 14px;
   min-width: 220px;
   outline: none;
-  transition: 0.2s;
   background: var(--input-bg);
   color: var(--text-main);
 }

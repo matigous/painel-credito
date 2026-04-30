@@ -47,7 +47,6 @@ input {
   font-size: 0.95rem;
   background: var(--input-bg);
   color: var(--text-main);
-  transition: all 0.2s ease;
 }
 
 input:focus {
@@ -85,7 +84,6 @@ input[aria-invalid='true'] {
   border-radius: 10px;
   font-weight: 600;
   cursor: pointer;
-  transition: 0.2s;
 }
 
 .btn-salvar:hover {
@@ -107,7 +105,6 @@ input[aria-invalid='true'] {
   border-radius: 10px;
   font-weight: 600;
   cursor: pointer;
-  transition: 0.2s;
 }
 
 .btn-cancelar:hover {

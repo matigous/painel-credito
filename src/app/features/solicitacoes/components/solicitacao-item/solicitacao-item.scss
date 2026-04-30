@@ -3,18 +3,10 @@
   border-radius: 12px;
   padding: 1.25rem;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-  transition:
-    box-shadow 0.2s ease,
-    transform 0.2s ease;
   border: 1px solid var(--border);
 
   display: flex;
   flex-direction: column;
-
-  &:hover {
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
-    transform: translateY(-2px);
-  }
 
   &__header {
     display: flex;
@@ -86,7 +78,6 @@
     font-size: 0.85rem;
     font-weight: 500;
     cursor: pointer;
-    transition: all 0.2s ease;
   }
 
   /* BOTÃO EDITAR */

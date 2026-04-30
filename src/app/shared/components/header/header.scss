@@ -73,14 +73,10 @@
     color: #ffffff;
     font-weight: 600;
     cursor: pointer;
-    transition:
-      background 0.2s ease,
-      transform 0.2s ease;
   }
 
   &__logout:hover {
     background: #ef4444;
-    transform: translateY(-1px);
   }
 
   &__logout:focus {
