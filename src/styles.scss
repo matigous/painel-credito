@@ -1,11 +1,4 @@
-/* You can add global styles to this file, and also import other style files */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
 
 :root,
 body.light-theme {
@@ -30,10 +23,21 @@ body.dark-theme {
   --shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--page-bg);
+}
+
 body {
-  font-family: 'Inter', sans-serif;
+  margin: 0;
   background: var(--page-bg);
   color: var(--text-main);
+  font-family: 'Inter', Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -50,4 +54,16 @@ input:focus,
 select:focus {
   outline: 3px solid rgba(99, 102, 241, 0.35);
   outline-offset: 2px;
+}
+
+[role='button']:focus {
+  outline: 3px solid rgba(99, 102, 241, 0.45);
+  outline-offset: 2px;
+}
+
+.cdk-virtual-scroll-content-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  padding: 1.25rem;
 }

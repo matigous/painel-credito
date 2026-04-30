@@ -1,0 +1,22 @@
+{
+  "FORM": {
+    "NEW": "Nuova Richiesta",
+    "EDIT": "Modifica Richiesta",
+    "CLIENT": "Nome del cliente",
+    "CPF": "CPF",
+    "VALUE": "Valore richiesto",
+    "PLACEHOLDER_CLIENT": "Inserisci il nome del cliente",
+    "PLACEHOLDER_CPF": "Inserisci solo gli 11 numeri del CPF",
+    "PLACEHOLDER_VALUE": "Inserisci il valore richiesto",
+    "SAVE": "Salva",
+    "CANCEL": "Annulla",
+    "ERROR_NAME": "Il nome è obbligatorio.",
+    "ERROR_CPF": "Il CPF deve contenere esattamente 11 numeri."
+  },
+  "ACCESSIBILITY": {
+    "OPEN_REQUEST": "Apri dettagli della richiesta di",
+    "EDIT_REQUEST": "Modifica richiesta di",
+    "ANALYZE_REQUEST": "Analizza richiesta di",
+    "DELETE_REQUEST": "Elimina richiesta di"
+  }
+}

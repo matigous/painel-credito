@@ -1,5 +1,11 @@
+<app-header [title]="'APP.TITLE' | translate"></app-header>
+
 <div class="page-container">
-  <app-header [title]="'APP.TITLE' | translate"></app-header>
+  @if (facade.feedback()) {
+    <div class="feedback" aria-live="polite" role="status">
+      {{ facade.feedback() }}
+    </div>
+  }
 
   <app-resumo-solicitacoes [lista]="facade.listaFiltrada()"></app-resumo-solicitacoes>
 

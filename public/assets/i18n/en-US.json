@@ -58,5 +58,11 @@
   },
   "REQUEST": {
     "DATE": "Request Date"
+  },
+  "ACCESSIBILITY": {
+    "OPEN_REQUEST": "Open request details from",
+    "EDIT_REQUEST": "Edit request from",
+    "ANALYZE_REQUEST": "Analyze request from",
+    "DELETE_REQUEST": "Delete request from"
   }
 }

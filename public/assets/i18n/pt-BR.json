@@ -58,5 +58,11 @@
   },
   "REQUEST": {
     "DATE": "Data da Solicitação"
+  },
+  "ACCESSIBILITY": {
+    "OPEN_REQUEST": "Abrir detalhes da solicitação de",
+    "EDIT_REQUEST": "Editar solicitação de",
+    "ANALYZE_REQUEST": "Analisar solicitação de",
+    "DELETE_REQUEST": "Excluir solicitação de"
   }
 }
