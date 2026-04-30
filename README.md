@@ -4,7 +4,7 @@
 ![Angular](https://img.shields.io/badge/angular-20.3-red)
 ![License](https://img.shields.io/badge/license-MIT-blue)
 
-Olá! 👋 Bem-vindo ao repositório do **Painel de Crédito**. 
+Olá! 👋 Bem-vindo ao repositório do **Painel de Crédito**.
 
 Esta é uma aplicação web educacional desenvolvida durante a **Imersão FIAP/CAIXAVERSO**. Nosso principal objetivo aqui é demonstrar conceitos modernos de Angular (v20+), adotando uma arquitetura escalável e reativa.
 
@@ -52,7 +52,7 @@ src/app/
 └── app.config.ts   # Configurações globais (i18n, Firebase, Apollo, PWA)
 ```
 
-**Por que Feature First?**  
+**Por que Feature First?**
 Ao invés de agrupar todos os *services* em uma pasta e todos os *components* em outra, agrupamos os arquivos pelo seu **contexto de negócio**. O serviço e o modelo de "Solicitações" vivem junto dos seus respectivos componentes, reduzindo o acoplamento global.
 
 ---
@@ -98,7 +98,7 @@ Preparamos um fluxo simples para você rodar o projeto localmente:
    ```
    Acesse no seu navegador favorito: `http://localhost:4200/`.
 
-   > 💡 **Dica de Acesso:** Utilize o usuário `test2@teste.com` e a **senha da aula** para logar no projeto e visualizar uma base com dados já cadastrados.
+   > 💡 **Dica de Acesso:** Utilize o usuário `teste2@teste.com` e a **senha da aula** para logar no projeto e visualizar uma base com dados já cadastrados.
 
 4. **Para rodar testes e build de produção:**
    ```bash
