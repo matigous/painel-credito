@@ -54,6 +54,15 @@
   color: #4b5563;
 }
 
+.login__tip {
+  font-size: 13px;
+  background-color: #f3f4f6;
+  padding: 12px;
+  border-radius: 8px;
+  color: #374151;
+  border-left: 4px solid var(--primary);
+}
+
 .login__label {
   font-size: 13px;
   font-weight: 600;

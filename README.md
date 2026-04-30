@@ -98,6 +98,8 @@ Preparamos um fluxo simples para você rodar o projeto localmente:
    ```
    Acesse no seu navegador favorito: `http://localhost:4200/`.
 
+   > 💡 **Dica de Acesso:** Utilize o usuário `test2@teste.com` e a **senha da aula** para logar no projeto e visualizar uma base com dados já cadastrados.
+
 4. **Para rodar testes e build de produção:**
    ```bash
    npm test          # Roda todos os testes unitários
