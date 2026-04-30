@@ -15,6 +15,7 @@ import { STORAGE_KEY } from './services/storage.token';
 
 import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
 import { provideAuth, getAuth } from '@angular/fire/auth';
+import { provideFirestore, getFirestore } from '@angular/fire/firestore';
 import { environment } from '../environments/environment';
 
 import { provideTranslateService } from '@ngx-translate/core';
@@ -42,11 +43,13 @@ export const appConfig: ApplicationConfig = {
 
     provideAuth(() => getAuth()),
 
+    provideFirestore(() => getFirestore()),
+
     provideTranslateService({
       fallbackLang: 'pt-BR',
       lang: 'pt-BR',
       loader: provideTranslateHttpLoader({
-        prefix: '/assets/i18n/',
+        prefix: './assets/i18n/',
         suffix: '.json',
       }),
     }),

@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { TranslatePipe } from '@ngx-translate/core';
 import { AuthService } from '../../../services/auth.service';
+import { AtividadesService } from '../../../services/atividades.service';
 
 @Component({
   selector: 'app-login',
@@ -19,6 +20,7 @@ export class LoginComponent {
 
   constructor(
     public authService: AuthService,
+    private atividadesService: AtividadesService,
     private router: Router,
   ) {}
 
@@ -28,6 +30,13 @@ export class LoginComponent {
     this.carregando = false;
 
     if (usuario) {
+      await this.atividadesService.registrarAtividade({
+        tipo: 'login',
+        descricao: `Login realizado com email e senha por ${usuario.email}`,
+        entidade: 'usuario',
+        entidadeId: usuario.uid,
+      });
+
       this.router.navigate(['/solicitacoes']);
     }
   }
@@ -38,6 +47,13 @@ export class LoginComponent {
     this.carregando = false;
 
     if (usuario) {
+      await this.atividadesService.registrarAtividade({
+        tipo: 'login',
+        descricao: `Login realizado com Google por ${usuario.email}`,
+        entidade: 'usuario',
+        entidadeId: usuario.uid,
+      });
+
       this.router.navigate(['/solicitacoes']);
     }
   }

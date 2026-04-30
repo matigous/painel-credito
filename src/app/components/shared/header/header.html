@@ -10,7 +10,7 @@
       </h1>
 
       <p class="header__subtitle">
-        {{ 'APP.SUBTITLE' | translate }}
+        {{ 'APP.TITLE' | translate }}
       </p>
     </div>
 
@@ -23,6 +23,8 @@
         <a class="header__link" routerLink="/perfil">
           {{ 'ACTIONS.PROFILE' | translate }}
         </a>
+
+        <a class="header__link" routerLink="/atividades"> Atividades </a>
 
         <button type="button" class="header__logout" (click)="logout()">
           {{ 'ACTIONS.LOGOUT' | translate }}

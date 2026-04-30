@@ -37,10 +37,27 @@ src/app/
 1. **Instale as dependências:**
 
    ```bash
-   npm install
+   npm install --legacy-peer-deps
    ```
 
-2. **Inicie o servidor de desenvolvimento:**
+2. **Configure as variáveis de ambiente:**
+
+   ```bash
+   npm run setup:env
+   ```
+
+   Edite o arquivo `.env.local` e adicione suas credenciais do Firebase:
+
+   ```env
+   FIREBASE_API_KEY=
+   FIREBASE_AUTH_DOMAIN=
+   FIREBASE_PROJECT_ID=
+   FIREBASE_STORAGE_BUCKET=
+   FIREBASE_MESSAGING_SENDER_ID=
+   FIREBASE_APP_ID=
+   ```
+
+3. **Inicie o servidor de desenvolvimento:**
 
    ```bash
    npm start
@@ -48,12 +65,24 @@ src/app/
 
    Acesse `http://localhost:4200/`.
 
-3. **Testes e Build:**
+4. **Testes e Build:**
 
    ```bash
    npm test          # Executa testes unitários
    npm run build     # Gera versão de produção em /dist
    ```
+
+## 🔐 Variáveis de Ambiente
+
+As variáveis de configuração são injetadas automaticamente no build através de um script:
+
+- **`.env.local`** – Suas credenciais locais (não commitar)
+- **`.env.example`** – Template de referência
+- **`.env.production`** – Template para produção
+- **`scripts/load-env.js`** – Script que injeta variáveis no build
+- **`src/environments/env.generated.ts`** – Arquivo gerado (não commitar)
+
+> ⚠️ **Segurança:** O script executa automaticamente antes de `npm start`, `npm build` e `npm test`, gerando um arquivo com as variáveis do `.env.local`. Nunca commitar `.env.local` ou `env.generated.ts`.
 
 ## 👤 Autoria
 

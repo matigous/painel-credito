@@ -7,10 +7,12 @@ export const routes: Routes = [
     redirectTo: 'login',
     pathMatch: 'full',
   },
+
   {
     path: 'login',
     loadComponent: () => import('./components/login/login/login').then((m) => m.LoginComponent),
   },
+
   {
     path: 'solicitacoes',
     loadComponent: () =>
@@ -19,7 +21,7 @@ export const routes: Routes = [
       ),
     canActivate: [authGuard],
   },
-  // ROTAS ESPECÍFICAS PRIMEIRO
+
   {
     path: 'solicitacoes/nova',
     loadComponent: () =>
@@ -28,6 +30,7 @@ export const routes: Routes = [
       ),
     canActivate: [authGuard],
   },
+
   {
     path: 'solicitacoes/editar/:id',
     loadComponent: () =>
@@ -36,6 +39,7 @@ export const routes: Routes = [
       ),
     canActivate: [authGuard],
   },
+
   {
     path: 'perfil',
     loadComponent: () =>
@@ -44,7 +48,16 @@ export const routes: Routes = [
       ),
     canActivate: [authGuard],
   },
-  // ROTA GENÉRICA SEMPRE POR ÚLTIMO
+
+  {
+    path: 'atividades',
+    loadComponent: () =>
+      import('./components/atividades/atividades-lista/atividades-lista').then(
+        (m) => m.AtividadesListaComponent,
+      ),
+    canActivate: [authGuard],
+  },
+
   {
     path: 'solicitacoes/:id',
     loadComponent: () =>
