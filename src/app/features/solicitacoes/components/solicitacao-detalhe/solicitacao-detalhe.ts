@@ -1,0 +1,59 @@
+import { CommonModule } from '@angular/common';
+import { Component, OnInit, computed, inject, signal } from '@angular/core';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
+import { HeaderComponent } from '../../../../shared/components/header/header';
+import { SolicitacoesFacade } from '../../services/solicitacoes.facade';
+
+@Component({
+  selector: 'app-solicitacao-detalhe',
+  imports: [CommonModule, RouterLink],
+  templateUrl: './solicitacao-detalhe.html',
+  styleUrl: './solicitacao-detalhe.scss',
+})
+export class SolicitacaoDetalheComponent implements OnInit {
+  private router = inject(Router);
+  private route = inject(ActivatedRoute);
+
+  public facade = inject(SolicitacoesFacade);
+
+  id = signal<string | null>(null);
+
+  item = computed(() => {
+    const idValue = this.id();
+
+    if (!idValue) {
+      return undefined;
+    }
+
+    return this.facade.lista().find((solicitacao) => solicitacao.id === idValue);
+  });
+
+  ngOnInit() {
+    const routeId = this.route.snapshot.paramMap.get('id');
+
+    this.id.set(routeId);
+    this.facade.carregar();
+  }
+
+  async aprovar() {
+    const idValue = this.id();
+
+    if (!idValue) {
+      return;
+    }
+
+    await this.facade.atualizarStatus(idValue, 'aprovado');
+    this.router.navigate(['/solicitacoes']);
+  }
+
+  async reprovar() {
+    const idValue = this.id();
+
+    if (!idValue) {
+      return;
+    }
+
+    await this.facade.atualizarStatus(idValue, 'recusado');
+    this.router.navigate(['/solicitacoes']);
+  }
+}

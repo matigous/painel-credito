@@ -3,8 +3,8 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { TranslatePipe } from '@ngx-translate/core';
-import { AuthService } from '../../../services/auth.service';
-import { AtividadesService } from '../../../services/atividades.service';
+import { AuthService } from '../../../core/auth/auth.service';
+import { AtividadesService } from '../../../features/atividades/services/atividades.service';
 
 @Component({
   selector: 'app-login',

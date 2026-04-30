@@ -13,6 +13,34 @@
     "ERROR_NAME": "Il nome è obbligatorio.",
     "ERROR_CPF": "Il CPF deve contenere esattamente 11 numeri."
   },
+  "ACTIONS": {
+    "REQUESTS": "Richieste",
+    "ACTIVITIES": "Attività",
+    "SIMULATOR": "Simulatore",
+    "NEW_REQUEST": "Nuova Richiesta",
+    "EDIT": "Modifica",
+    "ANALYZE": "Analizza",
+    "DELETE": "Elimina",
+    "LOGOUT": "Esci",
+    "PROFILE": "Profilo"
+  },
+  "SIMULATOR": {
+    "TITLE": "Simulatore di Credito",
+    "HEADING": "Simula una proposta di credito",
+    "DESCRIPTION": "Inserisci valore, durata e tasso mensile per stimare rata, totale pagato e interessi.",
+    "PARAMETERS": "Parametri della simulazione",
+    "VALUE": "Valore richiesto",
+    "TERM": "Durata",
+    "RATE": "Tasso di interesse mensile",
+    "MONTHS": "mesi",
+    "RESULT": "Risultato della simulazione",
+    "INSTALLMENT": "Rata stimata",
+    "TOTAL_PAID": "Totale pagato",
+    "INTEREST_TOTAL": "Totale interessi",
+    "RESET": "Reimposta",
+    "CREATE_REQUEST": "Crea richiesta",
+    "DISCLAIMER": "Questa simulazione è solo una stima e non rappresenta approvazione del credito."
+  },
   "ACCESSIBILITY": {
     "OPEN_REQUEST": "Apri dettagli della richiesta di",
     "EDIT_REQUEST": "Modifica richiesta di",

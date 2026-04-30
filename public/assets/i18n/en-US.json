@@ -38,12 +38,31 @@
   },
   "ACTIONS": {
     "REQUESTS": "Requests",
+    "ACTIVITIES": "Activities",
+    "SIMULATOR": "Simulator",
     "NEW_REQUEST": "New Request",
     "EDIT": "Edit",
     "ANALYZE": "Review",
     "DELETE": "Delete",
     "LOGOUT": "Sign out",
     "PROFILE": "Profile"
+  },
+  "SIMULATOR": {
+    "TITLE": "Credit Simulator",
+    "HEADING": "Simulate a credit proposal",
+    "DESCRIPTION": "Enter amount, term and monthly interest rate to estimate installment, total paid and interest.",
+    "PARAMETERS": "Simulation parameters",
+    "VALUE": "Requested amount",
+    "TERM": "Term",
+    "RATE": "Monthly interest rate",
+    "MONTHS": "months",
+    "RESULT": "Simulation result",
+    "INSTALLMENT": "Estimated installment",
+    "TOTAL_PAID": "Total paid",
+    "INTEREST_TOTAL": "Total interest",
+    "RESET": "Reset",
+    "CREATE_REQUEST": "Create request",
+    "DISCLAIMER": "This simulation is only an estimate and does not represent credit approval."
   },
   "SEARCH": {
     "PLACEHOLDER": "Search client"

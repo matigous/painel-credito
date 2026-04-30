@@ -38,12 +38,31 @@
   },
   "ACTIONS": {
     "REQUESTS": "Solicitações",
+    "ACTIVITIES": "Atividades",
+    "SIMULATOR": "Simulador",
     "NEW_REQUEST": "Nova Solicitação",
     "EDIT": "Editar",
     "ANALYZE": "Analisar",
     "DELETE": "Excluir",
     "LOGOUT": "Sair",
     "PROFILE": "Perfil"
+  },
+  "SIMULATOR": {
+    "TITLE": "Simulador de Crédito",
+    "HEADING": "Simule uma proposta de crédito",
+    "DESCRIPTION": "Informe valor, prazo e taxa mensal para estimar parcela, total pago e juros.",
+    "PARAMETERS": "Parâmetros da simulação",
+    "VALUE": "Valor solicitado",
+    "TERM": "Prazo",
+    "RATE": "Taxa de juros mensal",
+    "MONTHS": "meses",
+    "RESULT": "Resultado da simulação",
+    "INSTALLMENT": "Parcela aproximada",
+    "TOTAL_PAID": "Total pago",
+    "INTEREST_TOTAL": "Total de juros",
+    "RESET": "Resetar",
+    "CREATE_REQUEST": "Criar solicitação",
+    "DISCLAIMER": "Esta simulação é apenas uma estimativa e não representa aprovação de crédito."
   },
   "SEARCH": {
     "PLACEHOLDER": "Buscar cliente"

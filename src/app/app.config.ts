@@ -10,8 +10,8 @@ import { InMemoryCache } from '@apollo/client/core';
 
 import { registerLocaleData } from '@angular/common';
 import localePt from '@angular/common/locales/pt';
-import { authInterceptor } from './interceptors/auth.interceptor';
-import { STORAGE_KEY } from './services/storage.token';
+import { authInterceptor } from './core/auth/auth.interceptor';
+import { STORAGE_KEY } from './core/tokens/storage.token';
 
 import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
 import { provideAuth, getAuth } from '@angular/fire/auth';
