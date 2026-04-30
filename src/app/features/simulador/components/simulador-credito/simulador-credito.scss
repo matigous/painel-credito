@@ -13,6 +13,13 @@
   border-radius: 16px;
   box-shadow: var(--shadow);
   padding: 24px;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.simulador-card:hover {
+  box-shadow: var(--shadow-hover);
 }
 
 .simulador-card__header {
@@ -72,6 +79,15 @@
   background: var(--input-bg);
   color: var(--text-main);
   font-size: 1rem;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.campo input[type='number']:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
 }
 
 .campo strong {
@@ -95,22 +111,27 @@
 }
 
 .btn-primario {
-  background: #2563eb;
+  background: var(--primary);
   color: #ffffff;
+  transition: all 0.2s ease;
 }
 
 .btn-primario:hover {
-  background: #1d4ed8;
+  background: var(--primary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
 }
 
 .btn-secundario {
   background: var(--card-bg);
   color: var(--text-main);
   border: 1px solid var(--border);
+  transition: all 0.2s ease;
 }
 
 .btn-secundario:hover {
   background: var(--hover-bg);
+  transform: translateY(-2px);
 }
 
 .resultado {
@@ -128,6 +149,14 @@
   background: var(--card-bg);
   border-radius: 12px;
   padding: 16px;
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.resultado-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--primary);
 }
 
 .resultado-card span {

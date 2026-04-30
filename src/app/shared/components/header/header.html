@@ -4,14 +4,17 @@
   }
 
   <div class="header__container">
-    <div>
-      <h1 class="header__title">
-        {{ title }}
-      </h1>
+    <div class="header__brand">
+      <img src="/favicon.svg" alt="Logo Painel" class="header__logo" />
+      <div>
+        <h1 class="header__title">
+          {{ title }}
+        </h1>
 
-      <p class="header__subtitle">
-        {{ 'APP.TITLE' | translate }}
-      </p>
+        <p class="header__subtitle">
+          {{ 'APP.TITLE' | translate }}
+        </p>
+      </div>
     </div>
 
     @if (authService.usuario() && !estaNaTelaLogin()) {

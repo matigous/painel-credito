@@ -22,11 +22,18 @@
   border-radius: 18px;
   padding: 1.5rem;
   box-shadow: var(--shadow);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.atividades-hero:hover {
+  box-shadow: var(--shadow-hover);
 }
 
 .eyebrow {
   margin: 0 0 0.5rem;
-  color: #6366f1;
+  color: var(--primary);
   font-weight: 700;
   font-size: 0.8rem;
   text-transform: uppercase;
@@ -48,20 +55,24 @@
 .btn-voltar {
   flex-shrink: 0;
   text-decoration: none;
-  background: #1e3a8a;
+  background: var(--primary);
   color: #ffffff;
   border-radius: 10px;
   padding: 0.75rem 1rem;
   font-weight: 700;
+  transition: all 0.2s ease;
 }
 
 .btn-voltar:hover {
-  background: #1d4ed8;
+  background: var(--primary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
 }
 
 .btn-voltar:focus {
-  outline: 3px solid rgba(99, 102, 241, 0.35);
-  outline-offset: 2px;
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
 }
 
 .live-card {
@@ -99,6 +110,14 @@
   border-radius: 16px;
   padding: 1rem;
   box-shadow: var(--shadow);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.atividade-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-hover);
 }
 
 .atividade-card__icone {

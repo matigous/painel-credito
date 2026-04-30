@@ -2,25 +2,35 @@
 
 :root,
 body.light-theme {
+  --primary: #4f46e5;
+  --primary-hover: #4338ca;
+  --accent: #10b981;
+  --accent-hover: #059669;
   --page-bg: #f8fafc;
   --card-bg: #ffffff;
   --input-bg: #ffffff;
-  --text-main: #1a1a2e;
-  --text-muted: #6b7280;
-  --border: #e5e7eb;
-  --hover-bg: #f9fafb;
-  --shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  --text-main: #0f172a;
+  --text-muted: #64748b;
+  --border: #e2e8f0;
+  --hover-bg: #f1f5f9;
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  --shadow-hover: 0 10px 30px rgba(79, 70, 229, 0.15);
 }
 
 body.dark-theme {
-  --page-bg: #0f172a;
-  --card-bg: #111827;
-  --input-bg: #1f2937;
-  --text-main: #f9fafb;
-  --text-muted: #cbd5e1;
-  --border: #374151;
-  --hover-bg: #1f2937;
-  --shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+  --primary: #6366f1;
+  --primary-hover: #818cf8;
+  --accent: #34d399;
+  --accent-hover: #10b981;
+  --page-bg: #09090b;
+  --card-bg: #18181b;
+  --input-bg: #27272a;
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --border: #27272a;
+  --hover-bg: #27272a;
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  --shadow-hover: 0 10px 30px rgba(99, 102, 241, 0.25);
 }
 
 * {
