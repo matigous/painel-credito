@@ -69,7 +69,7 @@ app-resumo-solicitacoes {
 }
 
 /* INPUT BUSCA */
-app-busca-solicitacoes input {
+::ng-deep app-busca-solicitacoes input {
   padding: 10px 14px;
   border: 1px solid var(--border);
   border-radius: 8px;
@@ -81,17 +81,17 @@ app-busca-solicitacoes input {
   color: var(--text-main);
 }
 
-app-busca-solicitacoes input::placeholder {
+::ng-deep app-busca-solicitacoes input::placeholder {
   color: var(--text-muted);
 }
 
-app-busca-solicitacoes input:focus {
+::ng-deep app-busca-solicitacoes input:focus {
   border-color: #6366f1;
   box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.15);
 }
 
 /* SELECT FILTRO */
-app-filtro-solicitacoes select {
+::ng-deep app-filtro-solicitacoes select {
   padding: 10px 12px;
   border: 1px solid var(--border);
   border-radius: 8px;
@@ -101,7 +101,7 @@ app-filtro-solicitacoes select {
   cursor: pointer;
 }
 
-app-filtro-solicitacoes select:focus {
+::ng-deep app-filtro-solicitacoes select:focus {
   border-color: #6366f1;
   outline: none;
   box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.15);
@@ -183,8 +183,8 @@ app-filtro-solicitacoes select:focus {
     justify-content: space-between;
   }
 
-  app-busca-solicitacoes input,
-  app-filtro-solicitacoes select {
+  ::ng-deep app-busca-solicitacoes input,
+  ::ng-deep app-filtro-solicitacoes select {
     width: 100%;
   }
 

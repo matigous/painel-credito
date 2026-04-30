@@ -15,6 +15,15 @@ body.light-theme {
   --hover-bg: #f1f5f9;
   --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
   --shadow-hover: 0 10px 30px rgba(79, 70, 229, 0.15);
+
+  --status-pendente-bg: #fef3c7;
+  --status-pendente-text: #92400e;
+  --status-aprovado-bg: #d1fae5;
+  --status-aprovado-text: #065f46;
+  --status-recusado-bg: #fee2e2;
+  --status-recusado-text: #991b1b;
+  --status-analise-bg: #dbeafe;
+  --status-analise-text: #1e40af;
 }
 
 body.dark-theme {
@@ -31,6 +40,15 @@ body.dark-theme {
   --hover-bg: #27272a;
   --shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
   --shadow-hover: 0 10px 30px rgba(99, 102, 241, 0.25);
+
+  --status-pendente-bg: rgba(245, 158, 11, 0.2);
+  --status-pendente-text: #fcd34d;
+  --status-aprovado-bg: rgba(16, 185, 129, 0.2);
+  --status-aprovado-text: #6ee7b7;
+  --status-recusado-bg: rgba(239, 68, 68, 0.2);
+  --status-recusado-text: #fca5a5;
+  --status-analise-bg: rgba(59, 130, 246, 0.2);
+  --status-analise-text: #93c5fd;
 }
 
 * {

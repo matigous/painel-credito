@@ -2,16 +2,16 @@
   max-width: 800px;
   margin: 40px auto;
   padding: 32px;
-  background: #ffffff;
+  background: var(--card-bg);
   border-radius: 16px; // Arredondado igual aos cards da imagem
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); // Sombra suave
+  box-shadow: var(--shadow); // Sombra suave
   font-family: 'Inter', sans-serif; // Ou a fonte que você está usando no projeto
 }
 
 .btn-back {
   background: transparent;
   border: none;
-  color: #6c757d;
+  color: var(--text-muted);
   cursor: pointer;
   font-size: 14px;
   margin-bottom: 24px;
@@ -22,7 +22,7 @@
   transition: color 0.2s;
 
   &:hover {
-    color: #333;
+    color: var(--text-main);
     text-decoration: underline;
   }
 }
@@ -33,12 +33,12 @@
   align-items: center;
   margin-bottom: 32px;
   padding-bottom: 16px;
-  border-bottom: 1px solid #f0f0f0;
+  border-bottom: 1px solid var(--border);
 
   h1 {
     font-size: 28px;
     font-weight: 700;
-    color: #1a1a1b;
+    color: var(--text-main);
     margin: 0;
   }
 }
@@ -54,12 +54,12 @@
     align-items: center;
 
     .label {
-      color: #6c757d;
+      color: var(--text-muted);
       font-size: 16px;
     }
 
     .value {
-      color: #1a1a1b;
+      color: var(--text-main);
       font-weight: 600;
       font-size: 18px;
 
@@ -93,20 +93,20 @@
   }
 
   .btn-aprovar {
-    background-color: #d1fae5; // Verde claro igual ao badge
-    color: #065f46;
+    background-color: var(--status-aprovado-bg); // Verde claro igual ao badge
+    color: var(--status-aprovado-text);
 
     &:hover {
-      background-color: #a7f3d0;
+      filter: brightness(0.95);
     }
   }
 
   .btn-reprovar {
-    background-color: #fee2e2; // Vermelho claro
-    color: #991b1b;
+    background-color: var(--status-recusado-bg); // Vermelho claro
+    color: var(--status-recusado-text);
 
     &:hover {
-      background-color: #fecaca;
+      filter: brightness(0.95);
     }
   }
 }
@@ -121,14 +121,14 @@
 }
 
 .card__status--pendente {
-  background: #fef3c7;
-  color: #92400e;
+  background: var(--status-pendente-bg);
+  color: var(--status-pendente-text);
 }
 .card__status--aprovado {
-  background: #d1fae5;
-  color: #065f46;
+  background: var(--status-aprovado-bg);
+  color: var(--status-aprovado-text);
 }
 .card__status--recusado {
-  background: #fee2e2;
-  color: #991b1b;
+  background: var(--status-recusado-bg);
+  color: var(--status-recusado-text);
 }

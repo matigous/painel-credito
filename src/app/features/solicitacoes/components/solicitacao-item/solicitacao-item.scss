@@ -1,12 +1,12 @@
 .card {
-  background: #ffffff;
+  background: var(--card-bg);
   border-radius: 12px;
   padding: 1.25rem;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   transition:
     box-shadow 0.2s ease,
     transform 0.2s ease;
-  border: 1px solid #e8e8e8;
+  border: 1px solid var(--border);
 
   display: flex;
   flex-direction: column;
@@ -22,13 +22,13 @@
     align-items: center;
     margin-bottom: 1rem;
     padding-bottom: 0.75rem;
-    border-bottom: 1px solid #f0f0f0;
+    border-bottom: 1px solid var(--border);
   }
 
   &__cliente {
     font-size: 1.1rem;
     font-weight: 600;
-    color: #1a1a2e;
+    color: var(--text-main);
     margin: 0;
   }
 
@@ -56,18 +56,18 @@
 
   &__label {
     font-size: 0.85rem;
-    color: #6b7280;
+    color: var(--text-muted);
   }
 
   &__value {
     font-size: 0.9rem;
     font-weight: 500;
-    color: #374151;
+    color: var(--text-main);
 
     &--destaque {
       font-size: 1rem;
       font-weight: 700;
-      color: #1a1a2e;
+      color: var(--text-main);
     }
   }
 
@@ -124,22 +124,22 @@
 /* STATUS (FORA DO BLOCO PARA FUNCIONAR COM ngClass) */
 .card__status {
   &--pendente {
-    background-color: #fef3c7;
-    color: #92400e;
+    background-color: var(--status-pendente-bg);
+    color: var(--status-pendente-text);
   }
 
   &--analise {
-    background-color: #dbeafe;
-    color: #1e40af;
+    background-color: var(--status-analise-bg);
+    color: var(--status-analise-text);
   }
 
   &--aprovado {
-    background-color: #d1fae5;
-    color: #065f46;
+    background-color: var(--status-aprovado-bg);
+    color: var(--status-aprovado-text);
   }
 
   &--recusado {
-    background-color: #fee2e2;
-    color: #991b1b;
+    background-color: var(--status-recusado-bg);
+    color: var(--status-recusado-text);
   }
 }
